@@ -1,11 +1,15 @@
 import React from 'react';
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Ranchers', 'sans-serif']
+  }
+});
 
 const fontStyle = {
   color: 'blue',
-  fontFamily: 'Lato',
-  fontStyle: 'normal',
-  fontWeight: 'normal',
-  src: `url(http://fonts.gstatic.com/s/lato/v17/S6uyw4BMUTPHvxk6XweuBCY.ttf) format('truetype')`
+  fontFamily: 'Ranchers'
 }
 
 
@@ -15,6 +19,7 @@ export default function Current(props) {
       {props.font && <div><h1>{props.font.family}</h1></div>}
       {props.font && <div><p>{props.font.files.regular}</p></div>}
       <p style={fontStyle}>TYPED RESULT HERE</p>
+
     </div>
   )
 }
