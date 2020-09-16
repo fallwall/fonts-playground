@@ -10,12 +10,13 @@ class App extends React.Component {
     super();
     this.state = {
       fonts: [],
-      currentFont: 0
+      currentFont: 0,
+      sorting: 0
     }
   }
 
   componentDidMount = async () => {
-    const fonts = await getAllFonts();
+    const fonts = await getAllFonts(0);
     this.setState({
       fonts
     })
@@ -28,17 +29,29 @@ class App extends React.Component {
     })
   }
 
+  changeSorting = async (s) => {
+    this.setState({
+      sorting: s
+    })
+    const fonts = await getAllFonts(s);
+    this.setState({
+      fonts
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <Sort />
-        <List
-          fonts={this.state.fonts}
-          changeCurrentFont={this.changeCurrentFont}
-        />
-        <Current
-          font={this.state.fonts[this.state.currentFont]}
-        />
+        <Sort changeSorting={this.changeSorting} />
+        <div className="content">
+          <List
+            fonts={this.state.fonts}
+            changeCurrentFont={this.changeCurrentFont}
+          />
+          <Current
+            font={this.state.fonts[this.state.currentFont]}
+          />
+        </div>
       </div>
     );
   }
