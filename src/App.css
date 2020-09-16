@@ -1,4 +1,13 @@
+.top {
+  height: 15vh;;
+}
 .content {
   display: flex;
   flex-direction: row;
+}
+
+.content-list {
+  background: red;
+  height: 85vh;
+  overflow-y:scroll;
 }

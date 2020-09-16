@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import WebFont from 'webfontloader';
-
+import { Typography, Slider } from '@material-ui/core';
 
 
 
@@ -13,7 +13,7 @@ export default function Current(props) {
       families: [`${font}`, 'sans-serif']
     }
   });
-  
+
   const fontStyle = {
     color: 'blue',
     fontFamily: `${font}`
@@ -21,6 +21,19 @@ export default function Current(props) {
   return (
     <div>
       {props.font && <div><h1>{props.font.family}</h1></div>}
+      <Typography id="discrete-slider-always" gutterBottom>
+        Font Size
+      </Typography>
+      <Slider
+        defaultValue={80}
+        // getAriaValueText={valuetext}
+        aria-labelledby="discrete-slider-always"
+        min={20}
+        max={200}
+        step={10}
+        // marks={marks}
+        valueLabelDisplay="on"
+      />
       <input
         type="text"
         placeholder="Roe is a cat..."
