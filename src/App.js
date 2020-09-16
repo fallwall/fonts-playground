@@ -10,7 +10,8 @@ class App extends React.Component {
     super();
     this.state = {
       fonts: [],
-      currentFont: 0
+      currentFont: 0,
+      fontSize: 80
     }
   }
 
@@ -35,6 +36,12 @@ class App extends React.Component {
     })
   }
 
+  changeFontSize = (v) => {
+    this.setState({
+      fontSize: v
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -46,6 +53,8 @@ class App extends React.Component {
           />
           <Current
             font={this.state.fonts[this.state.currentFont]}
+            fontSize={this.state.fontSize}
+            changeFontSize={this.changeFontSize}
           />
         </div>
       </div>

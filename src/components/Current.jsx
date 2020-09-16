@@ -16,6 +16,7 @@ export default function Current(props) {
 
   const fontStyle = {
     color: 'blue',
+    fontSize: props.fontSize,
     fontFamily: `${font}`
   }
   return (
@@ -25,8 +26,9 @@ export default function Current(props) {
         Font Size
       </Typography>
       <Slider
-        defaultValue={80}
+        defaultValue={props.fontSize}
         // getAriaValueText={valuetext}
+        onChange={(e, val) => props.changeFontSize(val)}
         aria-labelledby="discrete-slider-always"
         min={20}
         max={200}
