@@ -10,8 +10,7 @@ class App extends React.Component {
     super();
     this.state = {
       fonts: [],
-      currentFont: 0,
-      sorting: 0
+      currentFont: 0
     }
   }
 
@@ -30,9 +29,6 @@ class App extends React.Component {
   }
 
   changeSorting = async (s) => {
-    this.setState({
-      sorting: s
-    })
     const fonts = await getAllFonts(s);
     this.setState({
       fonts
