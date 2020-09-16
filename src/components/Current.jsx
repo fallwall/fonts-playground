@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import WebFont from 'webfontloader';
-import { Typography, Slider } from '@material-ui/core';
+import { Typography, Slider, TextField } from '@material-ui/core';
 
 
 
@@ -20,7 +20,7 @@ export default function Current(props) {
     fontFamily: `${font}`
   }
   return (
-    <div>
+    <div className="content-current">
       {props.font && <div><h1>{props.font.family}</h1></div>}
       <Typography id="discrete-slider-always" gutterBottom>
         Font Size
@@ -36,12 +36,15 @@ export default function Current(props) {
         // marks={marks}
         valueLabelDisplay="on"
       />
-      <input
-        type="text"
-        placeholder="Roe is a cat..."
-        onChange={e => setInput(e.target.value)}
-      />
-      {props.font && <div><p>{props.font.files.regular}</p></div>}
+      <form noValidate autoComplete="off">
+        <TextField
+          id="outlined-basic"
+          label="Type something here..."
+          variant="outlined"
+          placeholder="Roe is a cat..."
+          onChange={e => setInput(e.target.value)}
+        />
+      </form>
       <p style={fontStyle}>TYPED RESULT HERE</p>
       <p style={fontStyle}>{input}</p>
 

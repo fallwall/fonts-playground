@@ -1,6 +1,7 @@
 .top {
   height: 15vh;;
 }
+
 .content {
   display: flex;
   flex-direction: row;
@@ -9,5 +10,13 @@
 .content-list {
   background: red;
   height: 85vh;
+  width: 20%;
+  min-width: 200px;
+  max-width: 400px;
   overflow-y:scroll;
+}
+
+.content-current {
+  width: 80%;
+  max-width: 1000px;
 }
