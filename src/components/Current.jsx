@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import WebFont from 'webfontloader';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import { Typography, Slider, TextField } from '@material-ui/core';
 
 
@@ -41,13 +43,17 @@ export default function Current(props) {
           id="outlined-basic"
           label="Type something here..."
           variant="outlined"
+          fullWidth={true}
           placeholder="Roe is a cat..."
           onChange={e => setInput(e.target.value)}
         />
       </form>
-      <p style={fontStyle}>TYPED RESULT HERE</p>
-      <p style={fontStyle}>{input}</p>
+      <div className="content-current-output">
+        <p style={fontStyle}>{input}</p>
+      </div>
 
+      <SaveAltIcon fontSize="large" />
+      <MailOutlineIcon fontSize="large" />
     </div>
   )
 }

@@ -7,9 +7,12 @@
   flex-direction: row;
 }
 
+.content-current, .content-list {
+  height: 85vh;
+}
+
 .content-list {
   background: red;
-  height: 85vh;
   width: 20%;
   min-width: 200px;
   max-width: 400px;
@@ -19,4 +22,11 @@
 .content-current {
   width: 80%;
   max-width: 1000px;
+}
+
+.content-current-output {
+  border: black 2px solid;
+  height: 40vh;
+  margin: 2vh auto;
+  overflow-y:scroll;
 }
