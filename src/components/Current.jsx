@@ -24,6 +24,7 @@ export default function Current(props) {
   return (
     <div className="content-current">
       {props.font && <div><h1>{props.font.family}</h1></div>}
+      {props.font && <div><p><a href={props.font && props.font.files.regular}>download .ttf</a></p></div>}
       <Typography id="discrete-slider-always" gutterBottom>
         Font Size
       </Typography>
