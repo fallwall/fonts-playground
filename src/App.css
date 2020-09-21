@@ -2,6 +2,10 @@ p, h1, h2 {
   font-family: 'Stint Ultra Expanded', cursive;
 }
 
+form {
+  margin: 2% auto;
+}
+
 .top {
   height: 15vh;;
 }

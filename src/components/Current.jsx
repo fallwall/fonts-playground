@@ -12,6 +12,7 @@ import { Slider, TextField } from '@material-ui/core';
 
 export default function Current(props) {
   const [input, setInput] = useState("");
+  const [align, setAlign] = useState("justify");
   const font = props.font && props.font.family;
 
   WebFont.load({
@@ -23,7 +24,8 @@ export default function Current(props) {
   const fontStyle = {
     color: 'blue',
     fontSize: props.fontSize,
-    fontFamily: `${font}`
+    fontFamily: `${font}`,
+    textAlign: `${align}`
   }
   return (
     <div className="content-current">
@@ -35,20 +37,18 @@ export default function Current(props) {
           alt="Download TTF file">
           <GetAppIcon fontSize="large" />
         </a>
-        <FormatAlignCenterIcon fontSize="large" />
-        <FormatAlignJustifyIcon fontSize="large" />
-        <FormatAlignLeftIcon fontSize="large" />
-        <FormatAlignRightIcon fontSize="large" />
+        <FormatAlignCenterIcon onClick={()=>setAlign("center")} fontSize="large" />
+        <FormatAlignJustifyIcon onClick={()=>setAlign("justify")} fontSize="large" />
+        <FormatAlignLeftIcon onClick={()=>setAlign("left")} fontSize="large" />
+        <FormatAlignRightIcon onClick={()=>setAlign("right")} fontSize="large" />
         <FormatSizeIcon fontSize="large" />
         <Slider
           defaultValue={props.fontSize}
-          // getAriaValueText={valuetext}
           onChange={(e, val) => props.changeFontSize(val)}
           aria-labelledby="discrete-slider-always"
           min={20}
           max={200}
           step={10}
-          // marks={marks}
           valueLabelDisplay="on"
         />
       </div>
