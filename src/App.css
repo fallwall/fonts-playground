@@ -16,13 +16,27 @@ form {
 }
 
 .content-current, .content-list {
-  height: 85vh;
+  height: 80vh;
 }
 
 .content-list {
   width: 20%;
   min-width: 200px;
   max-width: 400px;
+  overflow-y:scroll;
+  position: relative;
+}
+
+.content-list-top {
+  background-color: rgba(255,255,255,1);
+  position: fixed;
+  top: 10vh;
+}
+
+.content-list-bottom {
+  position: fixed;
+  top: 19vh;
+  height: 70vh;
   overflow-y:scroll;
 }
 

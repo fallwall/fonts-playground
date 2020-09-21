@@ -29,7 +29,7 @@ export default function List(props) {
             labelId="demo-simple-select-outlined-label"
             id="demo-simple-select-outlined"
             // value={age}
-            onChange={e=>props.changeSorting(e.target.value)}
+            onChange={e => props.changeSorting(e.target.value)}
             label="Age"
           >
 
@@ -41,12 +41,14 @@ export default function List(props) {
           </Select>
         </FormControl>
       </div>
-      {props.fonts.map((e, i) => <div
-        key={i}
-        onClick={() => props.changeCurrentFont(i)}
-      >
-        <p>{e.family}</p>
-      </div>)}
+      <div className="content-list-bottom">
+        {props.fonts.map((e, i) => <div
+          key={i}
+          onClick={() => props.changeCurrentFont(i)}
+        >
+          <p>{e.family}</p>
+        </div>)}
+      </div>
     </div>
   )
 }
