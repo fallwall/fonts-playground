@@ -1,5 +1,5 @@
 import React from 'react';
-import Sort from './components/Sort';
+import Nav from './components/Nav';
 import List from './components/List';
 import Current from './components/Current';
 import { getAllFonts } from './services/gfonts';
@@ -45,10 +45,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Sort changeSorting={this.changeSorting} />
+        <Nav />
         <div className="content">
           <List
             fonts={this.state.fonts}
+            changeSorting={this.changeSorting}
             changeCurrentFont={this.changeCurrentFont}
           />
           <Current
