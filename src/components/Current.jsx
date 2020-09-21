@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import WebFont from 'webfontloader';
+import GetAppIcon from '@material-ui/icons/GetApp';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import FormatSizeIcon from '@material-ui/icons/FormatSize';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import { Typography, Slider, TextField } from '@material-ui/core';
-
-
+import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
+import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
+import FormatAlignLeftIcon from '@material-ui/icons/FormatAlignLeft';
+import FormatAlignRightIcon from '@material-ui/icons/FormatAlignRight';
+import { Slider, TextField } from '@material-ui/core';
 
 export default function Current(props) {
   const [input, setInput] = useState("");
@@ -24,21 +28,30 @@ export default function Current(props) {
   return (
     <div className="content-current">
       {props.font && <div><h1>{props.font.family}</h1></div>}
-      {props.font && <div><p><a href={props.font && props.font.files.regular}>download .ttf</a></p></div>}
-      <Typography id="discrete-slider-always" gutterBottom>
-        Font Size
-      </Typography>
-      <Slider
-        defaultValue={props.fontSize}
-        // getAriaValueText={valuetext}
-        onChange={(e, val) => props.changeFontSize(val)}
-        aria-labelledby="discrete-slider-always"
-        min={20}
-        max={200}
-        step={10}
-        // marks={marks}
-        valueLabelDisplay="on"
-      />
+      <div className="content-current-icons">
+        <a
+          href={props.font && props.font.files.regular}
+          title="Download TTF file"
+          alt="Download TTF file">
+          <GetAppIcon fontSize="large" />
+        </a>
+        <FormatAlignCenterIcon fontSize="large" />
+        <FormatAlignJustifyIcon fontSize="large" />
+        <FormatAlignLeftIcon fontSize="large" />
+        <FormatAlignRightIcon fontSize="large" />
+        <FormatSizeIcon fontSize="large" />
+        <Slider
+          defaultValue={props.fontSize}
+          // getAriaValueText={valuetext}
+          onChange={(e, val) => props.changeFontSize(val)}
+          aria-labelledby="discrete-slider-always"
+          min={20}
+          max={200}
+          step={10}
+          // marks={marks}
+          valueLabelDisplay="on"
+        />
+      </div>
       <form noValidate autoComplete="off">
         <TextField
           id="outlined-basic"
@@ -52,9 +65,10 @@ export default function Current(props) {
       <div className="content-current-output">
         <p style={fontStyle}>{input}</p>
       </div>
-
-      <SaveAltIcon fontSize="large" />
-      <MailOutlineIcon fontSize="large" />
+      <div className="content-current-icons2">
+        <SaveAltIcon fontSize="large" />
+        <MailOutlineIcon fontSize="large" />
+      </div>
     </div>
   )
 }

@@ -7,7 +7,7 @@ export default function List(props) {
         key={i}
         onClick={()=>props.changeCurrentFont(i)}
       >
-        {e.family}
+        <p>{e.family}</p>
       </div>)}
     </div>
   )

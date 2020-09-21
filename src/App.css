@@ -1,3 +1,7 @@
+p, h1, h2 {
+  font-family: 'Stint Ultra Expanded', cursive;
+}
+
 .top {
   height: 15vh;;
 }
@@ -22,6 +26,19 @@
 .content-current {
   width: 80%;
   max-width: 1000px;
+}
+
+.content-current-icons, .content-current-icons2 {
+  display: flex;
+  flex-direction: row;
+}
+
+.content-current-icons {
+  align-items: baseline;
+}
+
+.content-current-icons2 {
+  justify-content: flex-end;
 }
 
 .content-current-output {
