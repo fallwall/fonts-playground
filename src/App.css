@@ -1,10 +1,30 @@
+/* universal */
+html {
+  background-color: #FBFEF9;
+}
+
 p, h1, h2 {
   font-family: 'Stint Ultra Expanded', cursive;
+  color: #191923;
 }
 
 form {
   margin: 2% auto;
 }
+
+*::-moz-selection { 
+  background-color: #0E79B2;
+}
+
+*::selection { 
+  background-color: #0E79B2
+}
+
+a {
+   color:#0E79B2;
+}
+
+/* nav */
 
 .top {
   height: 15vh;;
@@ -14,6 +34,8 @@ form {
   display: flex;
   flex-direction: row;
 }
+
+/* left list */
 
 .content-current, .content-list {
   height: 80vh;
@@ -28,7 +50,7 @@ form {
 }
 
 .content-list-top {
-  background-color: rgba(255,255,255,1);
+  background-color: #FBFEF9;
   position: fixed;
   top: 10vh;
 }
@@ -39,6 +61,17 @@ form {
   height: 70vh;
   overflow-y:scroll;
 }
+
+.content-list-bottom p:hover {
+  cursor: pointer;
+}
+
+.content-list-bottom-current span {
+  background-color: #0E79B2;
+  padding: 2%;
+}
+
+/* current */
 
 .content-current {
   width: 80%;
@@ -59,7 +92,7 @@ form {
 }
 
 .content-current-output {
-  border: black 2px solid;
+  border: #191923 2px solid;
   height: 40vh;
   margin: 2vh auto;
   overflow-y:scroll;

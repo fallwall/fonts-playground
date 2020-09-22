@@ -45,10 +45,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+
         <Nav />
         <div className="content">
           <List
             fonts={this.state.fonts}
+            currentFont={this.state.currentFont}
             changeSorting={this.changeSorting}
             changeCurrentFont={this.changeCurrentFont}
           />
@@ -58,6 +60,7 @@ class App extends React.Component {
             changeFontSize={this.changeFontSize}
           />
         </div>
+
       </div>
     );
   }

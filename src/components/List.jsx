@@ -46,7 +46,7 @@ export default function List(props) {
           key={i}
           onClick={() => props.changeCurrentFont(i)}
         >
-          <p>{e.family}</p>
+          <p className={props.currentFont == i? "content-list-bottom-current":""}><span>{e.family}</span></p>
         </div>)}
       </div>
     </div>

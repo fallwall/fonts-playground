@@ -22,7 +22,7 @@ export default function Current(props) {
   });
 
   const fontStyle = {
-    color: 'blue',
+    color: '#0E79B2',
     fontSize: props.fontSize,
     fontFamily: `${font}`,
     textAlign: `${align}`
@@ -41,7 +41,7 @@ export default function Current(props) {
         <FormatAlignJustifyIcon onClick={()=>setAlign("justify")} fontSize="large" />
         <FormatAlignLeftIcon onClick={()=>setAlign("left")} fontSize="large" />
         <FormatAlignRightIcon onClick={()=>setAlign("right")} fontSize="large" />
-        <FormatSizeIcon fontSize="large" />
+        <FormatSizeIcon fontSize="large" color="primary"/>
         <Slider
           defaultValue={props.fontSize}
           onChange={(e, val) => props.changeFontSize(val)}
@@ -50,6 +50,7 @@ export default function Current(props) {
           max={200}
           step={10}
           valueLabelDisplay="on"
+          color="primary"
         />
       </div>
       <form noValidate autoComplete="off">
