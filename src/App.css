@@ -97,3 +97,7 @@ a {
   margin: 2vh auto;
   overflow-y:scroll;
 }
+
+.Slider {
+  color: red;
+}
