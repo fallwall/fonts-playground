@@ -9,6 +9,24 @@ import FormatAlignJustifyIcon from '@material-ui/icons/FormatAlignJustify';
 import FormatAlignLeftIcon from '@material-ui/icons/FormatAlignLeft';
 import FormatAlignRightIcon from '@material-ui/icons/FormatAlignRight';
 import { Slider, TextField } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+
+const muiTheme = createMuiTheme({
+  overrides: {
+    MuiSlider: {
+      thumb: {
+        color: '#0E79B2',
+      },
+      track: {
+        color: '#71B8DE'
+      },
+      rail: {
+        color: '#191923'
+      }
+    }
+  }
+});
 
 export default function Current(props) {
   const [input, setInput] = useState("");
@@ -37,21 +55,23 @@ export default function Current(props) {
           alt="Download TTF file">
           <GetAppIcon fontSize="large" />
         </a>
-        <FormatAlignCenterIcon onClick={()=>setAlign("center")} fontSize="large" />
-        <FormatAlignJustifyIcon onClick={()=>setAlign("justify")} fontSize="large" />
-        <FormatAlignLeftIcon onClick={()=>setAlign("left")} fontSize="large" />
-        <FormatAlignRightIcon onClick={()=>setAlign("right")} fontSize="large" />
-        <FormatSizeIcon fontSize="large" color="primary"/>
-        <Slider
-          defaultValue={props.fontSize}
-          onChange={(e, val) => props.changeFontSize(val)}
-          aria-labelledby="discrete-slider-always"
-          min={20}
-          max={200}
-          step={10}
-          valueLabelDisplay="on"
-          color="primary"
-        />
+        <FormatAlignCenterIcon onClick={() => setAlign("center")} fontSize="large" />
+        <FormatAlignJustifyIcon onClick={() => setAlign("justify")} fontSize="large" />
+        <FormatAlignLeftIcon onClick={() => setAlign("left")} fontSize="large" />
+        <FormatAlignRightIcon onClick={() => setAlign("right")} fontSize="large" />
+        <FormatSizeIcon fontSize="large" />
+        <ThemeProvider theme={muiTheme}>
+          <Slider
+            defaultValue={props.fontSize}
+            onChange={(e, val) => props.changeFontSize(val)}
+            aria-labelledby="discrete-slider-always"
+            min={20}
+            max={200}
+            step={10}
+            valueLabelDisplay="on"
+            className="Slider"
+          />
+        </ThemeProvider>
       </div>
       <form noValidate autoComplete="off">
         <TextField
