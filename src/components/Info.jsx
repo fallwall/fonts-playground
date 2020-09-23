@@ -77,9 +77,7 @@ export default function Info() {
             Sorting of the whole lists of the available fonts can be arranged by three categories - alphabetical (default), popularity, and dates.
           </Typography>
           <Typography gutterBottom>
-            Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
-            auctor fringilla.
+            Type something to test our your next favorite type.
           </Typography>
         </DialogContent>
         <DialogActions>
