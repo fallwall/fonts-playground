@@ -27,7 +27,11 @@ a {
 /* nav */
 
 .top {
-  height: 15vh;;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .content {
