@@ -87,8 +87,12 @@ export default function Current(props) {
         <p style={fontStyle}>{input}</p>
       </div>
       <div className="content-current-icons2">
-        <SaveAltIcon fontSize="large" />
-        <MailOutlineIcon fontSize="large" />
+        {/* <SaveAltIcon fontSize="large" /> */}
+        <a
+          href="mailto:sherunsfreely@gmail.com"
+          title="Have feedback?">
+          <MailOutlineIcon fontSize="large" />
+        </a>
       </div>
     </div>
   )
