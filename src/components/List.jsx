@@ -5,16 +5,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-// export const getAllFonts = async (order) => {
-//   const orderConvert = (order) => ({
-//     0 : "ALPHA",
-//     1 : "POPULARITY",
-//     2 : "DATE",
-//   })[order];
-//   const sorting = order > 0 ? `&sort=${orderConvert(order)}` : ``;
-//   const resp = await axios.get(`${API_URL}${sorting}`);
-//   return resp.data.items;
-// }
 export default function List(props) {
   return (
     <div className="content-list">
